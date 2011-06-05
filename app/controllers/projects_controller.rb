@@ -38,5 +38,11 @@ class ProjectsController < ApplicationController
   end
 
   def new
+    @project = Project.new
+  end
+
+  def create
+    Project.add params[:project]
+    redirect_to :root
   end
 end

@@ -45,12 +45,18 @@ describe ProjectsController do
   end
 
   describe "#new" do
-    render_views
-    it "renders the new and form project partials" do
+    it "sets up the new project form" do
       get :new
-      response.should render_template :new
-      response.should render_template :form
-      response.body.should match /New Project/
+      assigns[:project].should be_kind_of(Project)
+    end
+  end
+
+  describe "#create" do
+    it "creates a new project" do
+      project = Factory.build :project
+      Project.should_receive(:add).with(project)
+      post :create, :project => project
+      response.should redirect_to root_path
     end
   end
 end

@@ -7,8 +7,10 @@ Goldberg::Application.routes.draw do
     get route, :to => 'home#ccfeed', :defaults => {:format => 'xml'}
   end
 
-  resources :projects, :only => ['index', 'new']
+  resources :projects, :only => 'index'
 
+  get '/projects/new' => 'projects#new', :as => :new_project
+  post '/projects/create' => 'projects#create', :as => :create_project
   get '/projects/:project_name' => 'projects#show', :as => :project
   post '/projects/:project_name/builds' => 'projects#force', :as => :project_force
 
