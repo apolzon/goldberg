@@ -43,4 +43,14 @@ describe ProjectsController do
       get :show, :project_name => project.name, :format => 'png'
     end
   end
+
+  describe "#new" do
+    render_views
+    it "renders the new and form project partials" do
+      get :new
+      response.should render_template :new
+      response.should render_template :form
+      response.body.should match /New Project/
+    end
+  end
 end

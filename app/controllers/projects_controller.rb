@@ -36,4 +36,7 @@ class ProjectsController < ApplicationController
       format.json { render :json => Project.all.to_json(:except => [:created_at, :modified_at], :methods => [:activity, :last_complete_build_status]) }
     end
   end
+
+  def new
+  end
 end
