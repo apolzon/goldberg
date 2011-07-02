@@ -58,6 +58,16 @@ div.header {
    font-size: 16px;
    padding-left: 4px;
   }
+
+  .subnav {
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    float: right;
+    margin-right: 5px;
+    font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serf;
+  }
 }
 
 div.page{
@@ -67,7 +77,7 @@ div.page{
     overflow: hidden;
 }
 
-div#all-projects{
+div#all-projects, div#new-project{
   width: 1020px;
   padding: 0 0 10px 0;
   float: left;
@@ -75,6 +85,33 @@ div#all-projects{
   background: #fff;
   box-shadow: 0 0 5px rgba(0,0,0,0.5);
   border-radius: 8px;
+}
+
+div#new-project {
+  padding-left: 25px;
+  font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  div#new-project-form {
+    form {
+      fieldset {
+        width: 600px;
+        div {
+          float: left;
+          padding-bottom: 15px;
+          padding-left: 10px;
+          &.label { 
+            width: 200px;
+            font-size: 14px;
+          }
+          &.input { 
+            width: 300px;
+          }
+          &.submit {
+            margin-left: 350px;
+          }
+        }
+      }
+    }
+  }
 }
 
 /* Footer */

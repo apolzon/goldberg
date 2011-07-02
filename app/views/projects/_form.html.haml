@@ -1,2 +1,18 @@
 #new-project-form
-  Build a new project
+  %h2 Build a new project
+  = form_for @project do |f|
+    %fieldset
+      .label
+        = f.label :name
+      .input
+        = f.text_field :name
+      .label
+        = f.label :url
+      .input
+        = f.text_field :url
+      .label
+        = f.label :branch
+      .input
+        = f.text_field :branch
+      .submit
+        = f.submit
